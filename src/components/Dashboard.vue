@@ -2,7 +2,7 @@
     <div>
         <h1>Dashboard</h1>
         <div class="dashboard">
-            <h2>Total</h2>
+            <h2>CardFlexbox</h2>
             <CardFlexbox minWidth="200px">
                 <KpiCard
                         icon="/icons/logo.png"
@@ -30,6 +30,34 @@
                         label="bla"
                 />
             </CardFlexbox>
+            <h2>CardGrid</h2>
+            <CardGrid minWidth="200px">
+                <KpiCard
+                        icon="/icons/logo.png"
+                        value="123"
+                        label="bla"
+                />
+                <KpiCard
+                        icon="/icons/logo.png"
+                        value="123"
+                        label="bla"
+                />
+                <KpiCard
+                        icon="/icons/logo.png"
+                        value="123"
+                        label="bla"
+                />
+                <KpiCard
+                        icon="/icons/logo.png"
+                        value="123"
+                        label="bla"
+                />
+                <KpiCard
+                        icon="/icons/logo.png"
+                        value="123"
+                        label="bla"
+                />
+            </CardGrid>
         </div>
     </div>
 </template>
@@ -37,11 +65,13 @@
 <script>
     import KpiCard from "./KpiCard";
     import CardFlexbox from "./CardFlexbox";
+    import CardGrid from "./CardGrid";
 
     export default {
         name: "Dashboard",
         components: {
             CardFlexbox,
+            CardGrid,
             KpiCard,
         }
     }

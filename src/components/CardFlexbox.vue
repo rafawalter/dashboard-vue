@@ -1,12 +1,22 @@
 <template>
-    <div class="card-flexbox">
+    <div class="card-flexbox" :style="cssProps">
         <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: "CardFlexbox"
+        name: "CardFlexbox",
+        props: {
+            minWidth: String,
+        },
+        computed: {
+            cssProps() {
+                return {
+                    '--card-minwidth': this.minWidth
+                }
+            }
+        }
     }
 </script>
 
@@ -14,10 +24,11 @@
     .card-flexbox {
         display: flex;
         flex-wrap: wrap;
-        margin: calc( -1 * var(--grid-gap) / 2);
+        margin: calc(-1 * var(--grid-gap) / 2);
+
         > * {
+            flex-basis: var(--card-minwidth, 200px);
             flex-grow: 1;
-            flex-basis: 220px;
             margin: calc(var(--grid-gap) / 2);
         }
     }

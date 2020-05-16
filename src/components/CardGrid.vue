@@ -1,5 +1,5 @@
 <template>
-    <div class="card-grid">
+    <div class="card-grid" :style="cssProps">
         <slot></slot>
     </div>
 </template>
@@ -8,7 +8,14 @@
     export default {
         name: "CardGrid",
         props: {
-            minWidth: Number,
+            minWidth: String,
+        },
+        computed: {
+            cssProps() {
+                return {
+                    '--card-minwidth': this.minWidth
+                }
+            }
         }
     }
 </script>
@@ -17,6 +24,6 @@
     .card-grid {
         display: grid;
         grid-gap: var(--grid-gap);
-        grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat( auto-fit, minmax(var(--card-minwidth, 200px), 1fr));
     }
 </style>
