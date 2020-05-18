@@ -1,48 +1,11 @@
 <script>
-    import {Bar, mixins} from "vue-chartjs";
-    const {reactiveProp} = mixins
+    import {Bar} from "vue-chartjs";
+    import BaseChartjs from "./BaseChartjs";
 
     export default {
         name: "ChartjsBar",
-        extends: Bar,
-        mixins: [reactiveProp],
-        props: ['options', 'title'],
-        mounted() {
-            let defaultOptions = {
-                maintainAspectRatio: false,
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        fontSize: 12,
-                    }
-                }
-            }
-
-            if (this.title) {
-                defaultOptions = {
-                    ...defaultOptions,
-                    title: {
-                        display: true,
-                        text: this.title,
-                        fontSize: 16,
-                    },
-                }
-            }
-
-            let finalOptions = {
-                ...defaultOptions,
-                ...this.options,
-            }
-
-            this.renderChart(this.chartData, finalOptions)
-        }
+        extends: BaseChartjs,
+        mixins: [Bar],
     }
 </script>
 
-<style scoped>
-    canvas.chartjs-render-monitor {
-        /* fixes bug when reducing width */
-        width: 100% !important;
-        height: 100%;
-    }
-</style>
