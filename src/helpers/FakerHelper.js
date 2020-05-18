@@ -14,7 +14,7 @@ let FakerHelper = {
         console.debug(fakeKpis)
         return fakeKpis
     },
-    chartData() {
+    barChartData() {
         return {
             labels: ['jan', 'feb'],
             datasets: [
@@ -27,6 +27,21 @@ let FakerHelper = {
                     backgroundColor: '#35495e',
                     data: [this.getRandomInt(), this.getRandomInt()]
                 }
+            ]
+        }
+    },
+    pieChartData() {
+        return {
+            datasets: [{
+                data: [10, 20, 30],
+                backgroundColor: ['#41b883', '#35495e', '#b85141', '#5e4535'],
+            }],
+
+            // These labels appear in the legend and in the tooltips when hovering different arcs
+            labels: [
+                'Green',
+                'Blue',
+                'Red'
             ]
         }
     },

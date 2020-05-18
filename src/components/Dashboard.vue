@@ -5,8 +5,10 @@
             <h2>Chartjs</h2>
             <CardFlexbox>
                 <ChartjsBar
-                        class="card"
-                        :chartData="chartData"
+                        :chartData="barChartData"
+                />
+                <ChartjsDoughnut
+                        :chartData="pieChartData"
                 />
             </CardFlexbox>
 
@@ -62,6 +64,7 @@
     import CardGrid from "./CardGrid";
     import ChartjsBar from "./chartjs/ChartjsBar";
     import FakerHelper from "../helpers/FakerHelper";
+    import ChartjsDoughnut from "./chartjs/ChartjsDoughnut";
 
     export default {
         name: "Dashboard",
@@ -70,11 +73,13 @@
             CardGrid,
             KpiCard,
             ChartjsBar,
+            ChartjsDoughnut,
         },
         data () {
             return {
                 kpis: FakerHelper.kpis(5),
-                chartData: FakerHelper.chartData()
+                barChartData: FakerHelper.barChartData(),
+                pieChartData: FakerHelper.pieChartData(),
             }
         }
     }
