@@ -1,7 +1,7 @@
 let faker = require('faker');
 
 let FakerHelper = {
-    fakeKpis: function(size = 5) {
+    kpis(size = 5) {
         let fakeKpis = []
         for (let i = 0; i < size; i++) {
             let label = faker.commerce.department()
@@ -13,6 +13,25 @@ let FakerHelper = {
         }
         console.debug(fakeKpis)
         return fakeKpis
+    },
+    chartData() {
+        return {
+            labels: ['jan', 'feb'],
+            datasets: [
+                {
+                    label: '2019',
+                    backgroundColor: '#41b883',
+                    data: [this.getRandomInt(), this.getRandomInt()]
+                }, {
+                    label: '202',
+                    backgroundColor: '#35495e',
+                    data: [this.getRandomInt(), this.getRandomInt()]
+                }
+            ]
+        }
+    },
+    getRandomInt () {
+        return Math.floor(Math.random() * (50 - 5 + 1)) + 5
     }
 }
 export default FakerHelper

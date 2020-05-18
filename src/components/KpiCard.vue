@@ -39,10 +39,6 @@
 
 <style scoped lang="scss">
     .card {
-        background-color: var(--card-background);
-        padding: var(--grid-gap);
-        border-radius: 5px;
-
         display: flex;
         justify-content: center;
     }
