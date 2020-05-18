@@ -21,12 +21,17 @@
 </script>
 
 <style lang="scss">
+    @import "../styles/card";
+
     .card-flexbox {
         display: flex;
         flex-wrap: wrap;
         margin: calc(-1 * var(--grid-gap) / 2);
 
         > * {
+            @include card;
+            background-color: var(--card-background);
+
             flex-basis: var(--card-minwidth, 200px);
             flex-grow: 1;
             margin: calc(var(--grid-gap) / 2);

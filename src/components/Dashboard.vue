@@ -3,12 +3,12 @@
         <h1>Dashboard</h1>
         <div class="dashboard">
             <h2>Chartjs</h2>
-            <CardGrid>
+            <CardFlexbox>
                 <ChartjsBar
                         class="card"
                         :chartData="chartData"
                 />
-            </CardGrid>
+            </CardFlexbox>
 
             <h2>KpiCard</h2>
             <CardGrid>
@@ -60,7 +60,7 @@
     import KpiCard from "./KpiCard";
     import CardFlexbox from "./CardFlexbox";
     import CardGrid from "./CardGrid";
-    import ChartjsBar from "./ChartjsBar";
+    import ChartjsBar from "./chartjs/ChartjsBar";
     import FakerHelper from "../helpers/FakerHelper";
 
     export default {
@@ -94,11 +94,6 @@
     .dashboard {
         @include card;
         background-color: var(--dashboard-background);
-
-        .card {
-            @include card;
-            background-color: var(--card-background);
-        }
     }
 
 </style>
