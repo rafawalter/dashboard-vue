@@ -20,11 +20,11 @@ let FakerHelper = {
                 {
                     label: '2019',
                     backgroundColor: '#41b883',
-                    data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+                    data: [faker.random.number(15), faker.random.number(15), faker.random.number(15)]
                 }, {
                     label: '2020',
                     backgroundColor: '#35495e',
-                    data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+                    data: [faker.random.number(15), faker.random.number(15), faker.random.number(15)]
                 }
             ]
         }
@@ -37,22 +37,22 @@ let FakerHelper = {
                     label: '2018',
                     backgroundColor: '#41b883',
                     data: [
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15),
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15)
                     ],
                 }, {
                     label: '2019',
                     backgroundColor: '#35495e',
                     data: [
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15),
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15)
                     ],
                 }, {
                     label: '2020',
                     backgroundColor: '#b85141',
                     data: [
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
-                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15),
+                        faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15), faker.random.number(15)
                     ],
                 }
             ]
@@ -61,7 +61,7 @@ let FakerHelper = {
     pieChartData() {
         return {
             datasets: [{
-                data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
+                data: [faker.random.number(15), faker.random.number(15), faker.random.number(15)],
                 backgroundColor: ['#41b883', '#35495e', '#b85141', '#5e4535'],
             }],
 
@@ -72,9 +72,6 @@ let FakerHelper = {
                 'Red'
             ]
         }
-    },
-    getRandomInt () {
-        return Math.floor(Math.random() * 10) + 10
     }
 }
 export default FakerHelper
