@@ -24,6 +24,6 @@
     .card-grid {
         display: grid;
         grid-gap: var(--grid-gap);
-        grid-template-columns: repeat( auto-fit, minmax(var(--card-minwidth, 200px), 1fr));
+        grid-template-columns: repeat( auto-fill, minmax(var(--card-minwidth, 200px), 1fr));
     }
 </style>

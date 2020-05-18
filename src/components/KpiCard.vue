@@ -1,11 +1,12 @@
 <template>
-    <div class="card">
+    <component :is="tag" class="card" :href="url">
         <img class="icon" :src="icon">
         <div class="dados">
             <div class="value">{{value}}</div>
             <div class="label">{{label}}</div>
+            <a v-if="hasLink" class="link" :href="url">{{urlLabel}}</a>
         </div>
-    </div>
+    </component>
 </template>
 
 <script>
@@ -15,6 +16,21 @@
             icon: String,
             value: String,
             label: String,
+            url: String,
+            urlLabel: {
+                type: String,
+                default: 'more info'
+            },
+        },
+        computed: {
+            hasLink() {
+                return !!this.url
+            },
+            tag() {
+                return this.hasLink
+                    ? 'a'
+                    : 'div'
+            }
         },
         components: {
         }
@@ -23,15 +39,20 @@
 
 <style scoped lang="scss">
     .card {
-        --card-background: #f5f5f5;
-        --card-hover-background: white;
-
         background-color: var(--card-background);
         padding: var(--grid-gap);
         border-radius: 5px;
 
         display: flex;
         justify-content: center;
+    }
+    a.card {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            background-color: var(--card-hover-background);
+        }
     }
     .icon {
         width: auto;
