@@ -5,15 +5,17 @@
             <h2>Chartjs</h2>
             <CardFlexbox>
                 <ChartjsBar
+                        title="Bar"
                         :chartData="barChartData"
                 />
                 <ChartjsDoughnut
+                        title="Doughtnut"
                         :chartData="pieChartData"
                 />
             </CardFlexbox>
 
             <h2>KpiCard</h2>
-            <CardGrid>
+            <CardFlexbox>
                 <KpiCard
                         icon="/icons/logo.png"
                         value="value"
@@ -31,7 +33,7 @@
                         label="label"
                         url="https://vuejs.org"
                 />
-            </CardGrid>
+            </CardFlexbox>
 
             <h2>CardFlexbox</h2>
             <CardFlexbox minWidth="200px">

@@ -33,7 +33,7 @@ let FakerHelper = {
     pieChartData() {
         return {
             datasets: [{
-                data: [10, 20, 30],
+                data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()],
                 backgroundColor: ['#41b883', '#35495e', '#b85141', '#5e4535'],
             }],
 

@@ -6,7 +6,7 @@
         name: "ChartjsBar",
         extends: Bar,
         mixins: [reactiveProp],
-        props: ['options'],
+        props: ['options', 'title'],
         mounted() {
             let defaultOptions = {
                 maintainAspectRatio: false,
@@ -15,6 +15,17 @@
                     labels: {
                         fontSize: 12,
                     }
+                }
+            }
+
+            if (this.title) {
+                defaultOptions = {
+                    ...defaultOptions,
+                    title: {
+                        display: true,
+                        text: this.title,
+                        fontSize: 16,
+                    },
                 }
             }
 
