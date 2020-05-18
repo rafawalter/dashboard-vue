@@ -5,6 +5,8 @@
 </template>
 
 <script>
+
+
     export default {
         name: "CardGrid",
         props: {
@@ -20,10 +22,17 @@
     }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+    @import "../styles/card";
+
     .card-grid {
         display: grid;
         grid-gap: var(--grid-gap);
         grid-template-columns: repeat( auto-fill, minmax(var(--card-minwidth, 200px), 1fr));
+
+        > * {
+            @include card;
+            background-color: var(--card-background);
+        }
     }
 </style>

@@ -3,7 +3,7 @@
     const {reactiveProp} = mixins
 
     export default {
-        name: "Chartjs",
+        name: "ChartjsBar",
         extends: Bar,
         mixins: [reactiveProp],
         props: ['options'],

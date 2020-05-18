@@ -1,0 +1,4 @@
+@mixin card {
+  padding: var(--grid-gap);
+  border-radius: var(--grid-gap);
+}

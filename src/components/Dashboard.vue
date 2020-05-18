@@ -4,7 +4,7 @@
         <div class="dashboard">
             <h2>Chartjs</h2>
             <CardGrid>
-                <Chartjs
+                <ChartjsBar
                         class="card"
                         :chartData="chartData"
                 />
@@ -60,7 +60,7 @@
     import KpiCard from "./KpiCard";
     import CardFlexbox from "./CardFlexbox";
     import CardGrid from "./CardGrid";
-    import Chartjs from "./Chartjs";
+    import ChartjsBar from "./ChartjsBar";
     import FakerHelper from "../helpers/FakerHelper";
 
     export default {
@@ -69,7 +69,7 @@
             CardFlexbox,
             CardGrid,
             KpiCard,
-            Chartjs,
+            ChartjsBar,
         },
         data () {
             return {
@@ -81,19 +81,14 @@
 </script>
 
 <style lang="scss">
+    @import "../styles/card";
+
     :root {
         --dashboard-background: lightgrey;
         --grid-gap: 10px;
         --card-background: #f5f5f5;
         --card-hover-background: white;
 
-        --color-primary: #41b883;
-        --color-secondary: #35495e;
-    }
-
-    @mixin card {
-        padding: var(--grid-gap);
-        border-radius: var(--grid-gap);
     }
 
     .dashboard {
