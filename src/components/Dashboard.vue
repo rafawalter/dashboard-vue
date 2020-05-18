@@ -6,9 +6,10 @@
             <CardFlexbox
                 min-width="300px"
             >
-                <ChartjsBar
-                        title="Bar"
+                <ChartjsHorizontalBar
+                        title="Horizontal Bar"
                         :chartData="barChartData"
+                        :stacked="false"
                 />
                 <ChartjsDoughnut
                         title="Doughtnut"
@@ -70,7 +71,7 @@
     import KpiCard from "./KpiCard";
     import CardFlexbox from "./CardFlexbox";
     import CardGrid from "./CardGrid";
-    import ChartjsBar from "./chartjs/ChartjsBar";
+    import ChartjsHorizontalBar from "./chartjs/ChartjsHorizontalBar";
     import FakerHelper from "../helpers/FakerHelper";
     import ChartjsDoughnut from "./chartjs/ChartjsDoughnut";
     import ChartjsAreaStacked from "./chartjs/ChartjsAreaStacked";
@@ -82,7 +83,7 @@
             CardFlexbox,
             CardGrid,
             KpiCard,
-            ChartjsBar,
+            ChartjsHorizontalBar,
             ChartjsDoughnut,
         },
         data () {
