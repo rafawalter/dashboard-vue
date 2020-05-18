@@ -12,7 +12,7 @@
                         :stacked="false"
                 />
                 <ChartjsDoughnut
-                        title="Doughtnut"
+                        title="Doughnut"
                         :chartData="pieChartData"
                 />
                 <ChartjsAreaStacked
