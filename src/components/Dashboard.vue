@@ -26,58 +26,22 @@
             <h2>CardFlexbox</h2>
             <CardFlexbox minWidth="200px">
                 <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
+                        v-for="(kpi, index) in kpis"
+                        :key="index"
+                        :icon="kpi.icon"
+                        :value="kpi.value"
+                        :label="kpi.label"
                 />
             </CardFlexbox>
 
             <h2>CardGrid</h2>
             <CardGrid minWidth="200px">
                 <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
-                />
-                <KpiCard
-                        icon="/icons/logo.png"
-                        value="123"
-                        label="bla"
+                        v-for="(kpi, index) in kpis"
+                        :key="index"
+                        :icon="kpi.icon"
+                        :value="kpi.value"
+                        :label="kpi.label"
                 />
             </CardGrid>
         </div>
@@ -88,6 +52,7 @@
     import KpiCard from "./KpiCard";
     import CardFlexbox from "./CardFlexbox";
     import CardGrid from "./CardGrid";
+    import FakerHelper from "../helpers/FakerHelper";
 
     export default {
         name: "Dashboard",
@@ -95,6 +60,11 @@
             CardFlexbox,
             CardGrid,
             KpiCard,
+        },
+        data () {
+            return {
+                kpis: FakerHelper.fakeKpis(5),
+            }
         }
     }
 </script>

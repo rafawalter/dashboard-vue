@@ -57,6 +57,7 @@
     .icon {
         width: auto;
         height: 50px;
+        margin-right: var(--grid-gap);
     }
     .value {
         font-weight: bold;
