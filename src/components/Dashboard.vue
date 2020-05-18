@@ -3,7 +3,9 @@
         <h1>Dashboard</h1>
         <div class="dashboard">
             <h2>Chartjs</h2>
-            <CardFlexbox>
+            <CardFlexbox
+                min-width="300px"
+            >
                 <ChartjsBar
                         title="Bar"
                         :chartData="barChartData"
@@ -11,6 +13,10 @@
                 <ChartjsDoughnut
                         title="Doughtnut"
                         :chartData="pieChartData"
+                />
+                <ChartjsAreaStacked
+                        title="Stacked Area"
+                        :chartData="lineChartData"
                 />
             </CardFlexbox>
 
@@ -67,10 +73,12 @@
     import ChartjsBar from "./chartjs/ChartjsBar";
     import FakerHelper from "../helpers/FakerHelper";
     import ChartjsDoughnut from "./chartjs/ChartjsDoughnut";
+    import ChartjsAreaStacked from "./chartjs/ChartjsAreaStacked";
 
     export default {
         name: "Dashboard",
         components: {
+            ChartjsAreaStacked,
             CardFlexbox,
             CardGrid,
             KpiCard,
@@ -82,6 +90,7 @@
                 kpis: FakerHelper.kpis(5),
                 barChartData: FakerHelper.barChartData(),
                 pieChartData: FakerHelper.pieChartData(),
+                lineChartData: FakerHelper.lineChartData(),
             }
         }
     }

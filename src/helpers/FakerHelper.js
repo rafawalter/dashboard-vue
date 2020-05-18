@@ -11,21 +11,49 @@ let FakerHelper = {
                 icon: `https://source.unsplash.com/50x50/?logo,${label},${i}`,
             })
         }
-        console.debug(fakeKpis)
         return fakeKpis
     },
     barChartData() {
         return {
-            labels: ['jan', 'feb'],
+            labels: ['1st', '2nd', '3rd'],
             datasets: [
                 {
                     label: '2019',
                     backgroundColor: '#41b883',
-                    data: [this.getRandomInt(), this.getRandomInt()]
+                    data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
                 }, {
-                    label: '202',
+                    label: '2020',
                     backgroundColor: '#35495e',
-                    data: [this.getRandomInt(), this.getRandomInt()]
+                    data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
+                }
+            ]
+        }
+    },
+    lineChartData() {
+        return {
+            labels: ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec' ],
+            datasets: [
+                {
+                    label: '2018',
+                    backgroundColor: '#41b883',
+                    data: [
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                    ],
+                }, {
+                    label: '2019',
+                    backgroundColor: '#35495e',
+                    data: [
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                    ],
+                }, {
+                    label: '2020',
+                    backgroundColor: '#b85141',
+                    data: [
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(),
+                        this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()
+                    ],
                 }
             ]
         }
@@ -46,7 +74,7 @@ let FakerHelper = {
         }
     },
     getRandomInt () {
-        return Math.floor(Math.random() * (50 - 5 + 1)) + 5
+        return Math.floor(Math.random() * 10) + 10
     }
 }
 export default FakerHelper

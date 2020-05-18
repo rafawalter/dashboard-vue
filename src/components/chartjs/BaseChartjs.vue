@@ -6,6 +6,11 @@
         name: "BaseChartjs",
         mixins: [reactiveProp],
         props: ['options', 'title'],
+        computed: {
+            componentOptions () {
+                return {}
+            },
+        },
         mounted() {
             let defaultOptions = {
                 maintainAspectRatio: false,
@@ -30,8 +35,10 @@
 
             let finalOptions = {
                 ...defaultOptions,
+                ...this.componentOptions,
                 ...this.options,
             }
+            console.debug(finalOptions)
 
             this.renderChart(this.chartData, finalOptions)
         },
