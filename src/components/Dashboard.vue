@@ -62,7 +62,6 @@
                         :icon="kpi.icon"
                         :value="kpi.value"
                         :label="kpi.label"
-                        :trend-data="kpi.trendData"
                 />
             </CardFlexbox>
 
@@ -74,6 +73,7 @@
                         :icon="kpi.icon"
                         :value="kpi.value"
                         :label="kpi.label"
+                        :trend-data="kpi.trendData"
                 />
             </CardGrid>
         </div>
