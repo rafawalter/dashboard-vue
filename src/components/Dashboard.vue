@@ -21,18 +21,30 @@
                 />
             </CardFlexbox>
 
+            <h2>Vue Trend</h2>
+            <CardFlexbox>
+                <Trend
+                        class="card"
+                        :data="trendData"
+                        :gradient="['#42b983', '#2c3e50']"
+                        auto-draw
+                        smooth
+                />
+            </CardFlexbox>
+
             <h2>KpiCard</h2>
             <CardFlexbox>
                 <KpiCard
                         icon="/icons/logo.png"
-                        value="value"
-                        label="label"
+                        value="100%"
+                        label="attributes used"
+                        :trendData="trendData"
                         urlLabel="learn more"
                         url="https://vuejs.org"
                 />
                 <KpiCard
-                        value="without icon"
-                        label="label"
+                        value="only value"
+                        label="and label"
                 />
                 <KpiCard
                         icon="/icons/logo.png"
@@ -50,6 +62,7 @@
                         :icon="kpi.icon"
                         :value="kpi.value"
                         :label="kpi.label"
+                        :trend-data="kpi.trendData"
                 />
             </CardFlexbox>
 
@@ -75,6 +88,7 @@
     import FakerHelper from "../helpers/FakerHelper";
     import ChartjsDoughnut from "./chartjs/ChartjsDoughnut";
     import ChartjsAreaStacked from "./chartjs/ChartjsAreaStacked";
+    import Trend from "vuetrend";
 
     export default {
         name: "Dashboard",
@@ -85,6 +99,7 @@
             KpiCard,
             ChartjsHorizontalBar,
             ChartjsDoughnut,
+            Trend,
         },
         data () {
             return {
@@ -92,6 +107,7 @@
                 barChartData: FakerHelper.barChartData(),
                 pieChartData: FakerHelper.pieChartData(),
                 lineChartData: FakerHelper.lineChartData(),
+                trendData: FakerHelper.trendData(),
             }
         }
     }

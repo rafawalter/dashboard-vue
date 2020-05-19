@@ -9,6 +9,7 @@ let FakerHelper = {
                 label,
                 value: faker.commerce.price(),
                 icon: `https://source.unsplash.com/50x50/?logo,${label},${i}`,
+                trendData: this.trendData()
             })
         }
         return fakeKpis
@@ -63,6 +64,9 @@ let FakerHelper = {
                 'Red'
             ]
         }
+    },
+    trendData() {
+        return this.randomNumberArray(15, 10)
     },
     randomNumberArray(size, max, min = 0) {
         let randomNumbers = []
