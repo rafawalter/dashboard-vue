@@ -14,6 +14,20 @@
         },
         computed: {
             componentOptions() {
+                let axesStartInZero = {
+                    scales: {
+                        xAxes: [{
+                            ticks: {
+                                min: 0
+                            }
+                        }],
+                        yAxes: [{
+                            ticks: {
+                                min: 0
+                            }
+                        }],
+                    }
+                }
                 let stackedOptions = {
                     scales: {
                         xAxes: [{
@@ -25,8 +39,8 @@
                     }
                 };
                 return this.stacked
-                    ? stackedOptions
-                    : {}
+                    ? { ...axesStartInZero, ...stackedOptions }
+                    : axesStartInZero
             },
         },
     }
