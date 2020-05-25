@@ -72,5 +72,6 @@
 
     .value {
         font-weight: bold;
+        font-size: 2em;
     }
 </style>

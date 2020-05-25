@@ -43,7 +43,7 @@
                         url="https://vuejs.org"
                 />
                 <KpiCard
-                        value="only value"
+                        value="Value"
                         label="and label"
                 />
                 <KpiCard
@@ -127,6 +127,7 @@
     .dashboard {
         @include card;
         background-color: var(--dashboard-background);
+        color: #2c3e50;
     }
 
 </style>
